@@ -43,33 +43,39 @@ class ManeDemo extends AbstractDemo
      * @var array<string, array{0: string, 1: string, 2: string, 3?: string}>
      */
     protected const PHOTOS = [
+        'acrylic-chair' => ['photo-1786325492119-7f5e6185afec', 'Styling chair', 'White acrylic styling chair in a bright salon'],
         'balayage' => ['photo-1605980625600-88b46abafa8d', 'Ash balayage', 'Soft ash blonde balayage on long curled hair', 'faces'],
         'balayage-before' => ['photo-1605980625600-88b46abafa8d', 'Before the balayage', 'Long hair before the balayage, flat and without dimension', 'faces&sat=-100&bri=-6&con=-20'],
         'basin' => ['photo-1634449571010-02389ed0f9b0', 'Wash basin', 'Wash basin with a reclining chair in the salon'],
         'beard' => ['photo-1599011176306-4a96f1516d4d', 'Beard trim', 'Barber trimming a beard with clippers'],
         'blonde' => ['photo-1515848797093-effe16ccfabb', 'Soft blonde', 'Portrait of a woman with soft blonde hair'],
         'blow-dry' => ['photo-1562322140-8baeececf3df', 'Blow-dry', 'Stylist blow-drying a client\'s hair'],
+        'bob' => ['photo-1779350676620-fde279b1d023', 'Sleek bob', 'Sleek brown bob seen from behind'],
         'braiding' => ['photo-1634449571017-5fecfd26ad76', 'Braiding', 'Stylist braiding long hair in the salon'],
         'bridal' => ['photo-1549236177-77e8271c34b6', 'Bridal half-up', 'Bride with a soft half-up style and a hair accessory'],
         'bride-crown' => ['photo-1523264114838-feca761983c4', 'Bride with flowers', 'Bride with loose waves and a floral crown'],
+        'bride-white' => ['photo-1586342805832-c0f10f33ac3d', 'Bridal headband', 'Bride in a white blouse with a white flower headband'],
         'brunette' => ['photo-1522337360788-8b13dee7a37e', 'Brunette waves', 'Woman with long brunette waves seen from behind'],
-        'bob' => ['photo-1779350676620-fde279b1d023', 'Sleek bob', 'Sleek brown bob seen from behind'],
-        'curling' => ['photo-1629397685944-7073f5589754', 'Soft waves', 'Stylist curling hair with a curling iron'],
         'curls' => ['photo-1569430548104-6ca1cda3ec41', 'Defined curls', 'Woman with long, defined dark curls'],
         'curly-smile' => ['photo-1595218841793-d38b949402d2', 'Curl cut', 'Smiling woman with voluminous curly hair'],
         'cut' => ['photo-1700760934268-8aa0ef52ce0a', 'Precision cut', 'Scissors cutting wet hair in the salon'],
         'fade' => ['photo-1593702275687-f8b402bf1fb5', 'Skin fade', 'Barber cutting a skin fade with clippers'],
+        'flatlay' => ['photo-1691600864306-11096725fadd', 'Scissors and flowers', 'Scissors, twine and white flowers on a white table'],
         'foils' => ['photo-1707812343087-c9ff9e5abb43', 'Foil highlights', 'Colourist placing foils for highlights'],
         'foils-2' => ['photo-1707720531504-ce087725861a', 'Colour work', 'Hair sectioned in foils during a colour appointment'],
+        'lounge' => ['photo-1594568790995-b7287d654ba6', 'Calm corner', 'Bright room with a round mirror and a wicker chair'],
         'ombre' => ['photo-1605980766335-d3a41c7332a1', 'Lived-in colour', 'Long hair with a soft lived-in ombre'],
+        'platinum' => ['photo-1779154137745-5680e6b97d65', 'Platinum bob', 'Woman with a platinum bob in profile against a white wall'],
         'products' => ['photo-1695527081782-33e110235ade', 'Care products', 'Shelf with hair care products in the salon'],
-        'reception' => ['photo-1634449862841-8c6e970117e5', 'Reception', 'Bright salon reception with a chandelier'],
         'round-brush' => ['photo-1734111719430-fe4a3973f8af', 'Round brush finish', 'Round brush blow-dry on blonde hair'],
         'salon' => ['photo-1695527081848-1e46c06e6458', 'The salon', 'Bright hair salon with a stylist at work'],
         'salon-bright' => ['photo-1633681138600-295fcd688876', 'Styling stations', 'Bright salon with white mirrors and styling chairs'],
-        'salon-lamps' => ['photo-1536520002442-39764a41e987', 'Styling bar', 'Long styling bar with mirrors and warm pendant lights'],
         'salon-mirrors' => ['photo-1633681926022-84c23e8cb2d6', 'Round mirrors', 'Salon with round mirrors and a brick wall'],
+        'scissors' => ['photo-1640958899960-65fc2f989a5f', 'Ready for you', 'Hair scissors on a white table'],
         'shampoo' => ['photo-1610705267928-1b9f2fa7f1c5', 'Shampoo bar', 'Pink shampoo bottles lined up on a shelf'],
+        'shears' => ['photo-1692521248572-b3108ab80955', 'Shears and eucalyptus', 'Hair shears beside a bowl of eucalyptus on a white table'],
+        'silver' => ['photo-1664897604719-f97662af3de2', 'Silver blonde', 'Close-up of silver blonde hair framing a face'],
+        'studio' => ['photo-1748015879337-ef95556c3749', 'Long auburn hair', 'Smiling woman with long auburn hair in a bright studio'],
         'stylist-1' => ['photo-1648157963892-fa90a04e278b', 'Lena Hofmann', 'Portrait of a woman with blonde hair'],
         'stylist-2' => ['photo-1619718908820-5c1de14e0b7e', 'Amara Okafor', 'Portrait of a smiling woman with curly hair'],
         'stylist-3' => ['photo-1774727485537-e5455eec8baa', 'Sofia Marino', 'Portrait of a woman with short dark hair'],
@@ -79,7 +85,7 @@ class ManeDemo extends AbstractDemo
         'updo' => ['photo-1672788709547-6d7f239972c3', 'Updo', 'Elegant updo on red hair'],
         'wash' => ['photo-1717160675489-7779f2c91999', 'Hair wash', 'Client getting a relaxing hair wash'],
         'wash-chair' => ['photo-1695527081827-fdbc4e77be9b', 'Wash lounge', 'Wash chair with a plant in the salon'],
-        'waves' => ['photo-1785456411888-c2e842552820', 'Lived-in waves', 'Stylist touching long waves with a soft ombre'],
+        'white-shirt' => ['photo-1712744626457-3ffa4ba32c8c', 'Warm welcome', 'Smiling woman with long dark hair in a white shirt'],
     ];
 
     private string $element;
@@ -109,7 +115,7 @@ class ManeDemo extends AbstractDemo
                 'title' => 'Your chair is *waiting*',
                 'subtitle' => 'Book an appointment',
                 'text' => 'Tell us what you have in mind and when you would like to come. We confirm your appointment within two hours during opening times.',
-                'background' => ['id' => $this->wide( 'basin' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'acrylic-chair' ), 'type' => 'file'],
             ]],
             ['id' => 'booking-form', 'type' => 'contact', 'group' => 'main', 'data' => [
                 'title' => 'Your appointment',
@@ -162,7 +168,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book a bridal trial', 'url' => '/book'],
                     ['label' => 'See bridal prices', 'url' => '#bridal-prices'],
                 ],
-                'background' => ['id' => $this->wide( 'bridal' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'bride-white' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Bridal looks we love',
@@ -252,7 +258,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Send your application', 'url' => 'mailto:jobs@maneatelier.example'],
                 ],
-                'background' => ['id' => $this->wide( 'curling' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'platinum' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'tools' ), 'type' => 'file'],
@@ -307,7 +313,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book a colour consultation', 'url' => '/book'],
                     ['label' => 'See colour prices', 'url' => '/services'],
                 ],
-                'background' => ['id' => $this->wide( 'foils' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'silver' ), 'type' => 'file'],
             ]],
             $this->transformation( 'From flat to *dimensional*' ),
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
@@ -548,7 +554,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book a free consultation', 'url' => '/book'],
                 ],
-                'background' => ['id' => $this->wide( 'reception' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'white-shirt' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'timeline', 'group' => 'main', 'data' => [
                 'title' => 'Your first visit',
@@ -632,7 +638,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book now', 'url' => '/book'],
                     ['label' => 'New clients', 'url' => '/new-clients'],
                 ],
-                'background' => ['id' => $this->wide( 'cut' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'shears' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Prices by stylist level',
@@ -713,7 +719,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book with your stylist', 'url' => '/book'],
                 ],
-                'background' => ['id' => $this->wide( 'team' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'scissors' ), 'type' => 'file'],
             ]],
             $this->team(),
             ['id' => Utils::uid(), 'type' => 'timeline', 'group' => 'main', 'data' => [
@@ -759,14 +765,14 @@ class ManeDemo extends AbstractDemo
             'status' => 1,
         ], [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-                'title' => 'Warm, calm and *close to the park*',
+                'title' => 'Light, calm and *close to the park*',
                 'subtitle' => 'Visit us',
                 'text' => 'Our salon is in a corner building in Schwabing, two minutes from the Englischer Garten. Eight chairs, big windows and a quiet wash lounge in the back.',
                 'buttons' => [
                     ['label' => 'Get directions', 'url' => 'https://www.openstreetmap.org/?mlat=48.1616&mlon=11.5795#map=17/48.1616/11.5795'],
                     ['label' => 'Call us', 'url' => 'tel:+498923456780'],
                 ],
-                'background' => ['id' => $this->wide( 'salon-lamps' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'lounge' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Opening hours',
@@ -903,7 +909,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book now', 'url' => '/book'],
                     ['label' => 'Services & prices', 'url' => '/services'],
                 ],
-                'background' => ['id' => $this->wide( 'waves' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'studio' ), 'type' => 'file'],
                 'background-animation' => 'zoom',
                 'main' => true,
             ]],
@@ -1020,7 +1026,7 @@ class ManeDemo extends AbstractDemo
                 'title' => 'Notes from *the chair*',
                 'subtitle' => 'Hair journal',
                 'text' => 'Care routines, colour advice and bridal tips from our stylists, written for the time between your appointments.',
-                'background' => ['id' => $this->wide( 'wash' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'flatlay' ), 'type' => 'file'],
             ]],
             ['id' => 'journal-list', 'type' => 'blog', 'group' => 'main', 'data' => [
                 'layout' => 'cards',

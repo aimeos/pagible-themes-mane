@@ -13,7 +13,7 @@ php artisan vendor:publish --tag=cms-theme
 
 ## Design
 
-- **Style**: Minimal salon luxury with a blush announcement bar, a translucent sticky header with a pill "Book now" button, full width image heroes with a soft espresso overlay, fine clay lines above section headings, price lists with dotted leaders, a before and after slider, borderless team portraits and an espresso footer with the address, opening hours and the cancellation notice
+- **Style**: Minimal salon luxury with a blush announcement bar, a translucent sticky header with a pill "Book now" button, bright full width image heroes with dark text and no dimming, fine clay lines above section headings, price lists with dotted leaders, a before and after slider, borderless team portraits and an espresso footer with the address, opening hours and the cancellation notice
 - **Colors**: Ivory (#F7F2EC), espresso (#1F1A17), clay rose (#9A5A43) and blush (#E9D5CB)
 - **Typography**: Serif display headings (Cormorant Garamond, Baskerville, Georgia) with italic accents, system sans-serif body and uppercase, letter-spaced labels
 - **Borders**: Soft `1rem` corners, arched images, pill buttons and badges, hairline borders instead of heavy shadows
