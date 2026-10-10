@@ -25,7 +25,7 @@ php artisan vendor:publish --tag=cms-theme
 |------|-------------|
 | `page` | Landing, services, colour, bridal, team, new clients, gift cards and visit pages |
 | `docs` | Documentation with sidebar navigation |
-| `blog` | Hair journal posts listed by the blog element |
+| `blog` | Hair tips posts listed by the blog element |
 
 ## Salon Details
 

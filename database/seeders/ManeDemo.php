@@ -28,8 +28,8 @@ class ManeDemo extends AbstractDemo
         'colour' => 'Hair colour in Munich: balayage, highlights, glossing, grey blending and colour correction by the colour team of Mane Atelier.',
         'curl-care' => 'How to care for curly hair: washing, conditioning, styling and sleeping, with the routine our curl specialists recommend.',
         'gift-cards' => 'Mane Atelier gift cards for cuts, colour, treatments and products in Munich, valid for three years.',
+        'hair-tips' => 'Hair tips from Mane Atelier: care guides, colour advice and bridal tips from our stylists in Munich.',
         'imprint' => 'Legal notice of Mane Atelier GmbH, Munich.',
-        'journal' => 'The Mane Atelier journal: hair care guides, colour trends and advice from our stylists in Munich.',
         'new-clients' => 'Your first visit at Mane Atelier: free consultation, patch tests, what to bring and our booking and cancellation policy.',
         'privacy' => 'Privacy policy of Mane Atelier GmbH, Munich.',
         'services' => 'Services and prices at Mane Atelier in Munich: cuts, colour, balayage, curls, treatments and styling by stylist level.',
@@ -63,8 +63,8 @@ class ManeDemo extends AbstractDemo
         'flatlay' => ['photo-1691600864306-11096725fadd', 'Scissors and flowers', 'Scissors, twine and white flowers on a white table'],
         'foils' => ['photo-1707812343087-c9ff9e5abb43', 'Foil highlights', 'Colourist placing foils for highlights'],
         'foils-2' => ['photo-1707720531504-ce087725861a', 'Colour work', 'Hair sectioned in foils during a colour appointment'],
+        'hair-toss' => ['photo-1562259920-47afc3030ba2', 'Love for hair', 'Stylist tossing the long hair of a smiling client', 'center&flip=h'],
         'ombre' => ['photo-1605980766335-d3a41c7332a1', 'Lived-in colour', 'Long hair with a soft lived-in ombre'],
-        'platinum' => ['photo-1779154137745-5680e6b97d65', 'Platinum bob', 'Woman with a platinum bob in profile against a white wall'],
         'platinum-flipped' => ['photo-1779154137745-5680e6b97d65', 'Platinum bob', 'Woman with a platinum bob in profile against a white wall', 'faces&flip=h'],
         'products' => ['photo-1695527081782-33e110235ade', 'Care products', 'Shelf with hair care products in the salon'],
         'round-brush' => ['photo-1734111719430-fe4a3973f8af', 'Round brush finish', 'Round brush blow-dry on blonde hair'],
@@ -89,7 +89,7 @@ class ManeDemo extends AbstractDemo
     ];
 
     private string $element;
-    private string $journalId;
+    private string $tipsId;
     /** @var array<string, string> */
     private array $icons = [];
     private string $logoFile;
@@ -258,7 +258,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Send your application', 'url' => 'mailto:jobs@maneatelier.example'],
                 ],
-                'background' => ['id' => $this->wide( 'platinum' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'hair-toss' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'tools' ), 'type' => 'file'],
@@ -437,95 +437,6 @@ class ManeDemo extends AbstractDemo
                 'text' => "# Imprint\n\n**Mane Atelier GmbH**\nHohenzollernstraße 42\n80801 München\nGermany\n\nTelephone: +49 89 2345 6780\nEmail: hello@maneatelier.example\n\nManaging director: Lena Hofmann\nCommercial register: Munich Local Court, HRB 00000\nVAT ID: DE000000000\n\nMaster craftswoman in the hairdressing trade, entered in the register of crafts of the Munich and Upper Bavaria Chamber of Crafts.\n\n## Consumer dispute resolution\n\nWe are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.\n\nThis is a demo website for the Mane theme. Mane Atelier is a fictional salon and the people named are not real.",
             ]],
         ], $home );
-
-        return $this;
-    }
-
-
-    /**
-     * Creates the journal page and its posts below the home page.
-     *
-     * @param Page $home Home page
-     * @return static Same object for fluent calls
-     */
-    protected function addJournal( Page $home ) : static
-    {
-        $journal = $this->journal( $home );
-
-        $this->post( $journal, [
-            'name' => 'Balayage guide',
-            'title' => 'Balayage, Foilyage or Highlights? How to Choose Your Colour',
-            'path' => 'balayage-guide',
-        ], 'Balayage, foilyage or highlights?',
-            "Three techniques, three very different results. Balayage is painted by hand and gives soft, sun-kissed brightness that grows out without a line. Foilyage combines painting with foils for more lift. Classic highlights are woven and placed from the root for an even, bright result.\n\nWhich one suits you depends on your starting colour, how bright you want to go and how often you want to come back. Here is how we decide together in the consultation.",
-            'balayage',
-            [
-                ['title' => '3–4 h', 'text' => 'Time for a full balayage'],
-                ['title' => '12 wks', 'text' => 'Until your first refresh'],
-                ['title' => '2', 'text' => 'Levels of lift in one session'],
-            ],
-            [
-                ['label' => 'Step 1', 'title' => 'Look at your base', 'text' => 'Natural or coloured, warm or cool, fine or thick.'],
-                ['label' => 'Step 2', 'title' => 'Decide on brightness', 'text' => 'Soft glow or bold blonde, near the face or all over.'],
-                ['label' => 'Step 3', 'title' => 'Choose the technique', 'text' => 'Balayage for softness, foils for lift, or both.'],
-                ['label' => 'Step 4', 'title' => 'Plan your upkeep', 'text' => 'A gloss in between keeps the tone fresh.'],
-            ],
-            [
-                ['title' => 'Does balayage work on dark hair?', 'text' => 'Yes, beautifully. Caramel and honey tones look especially natural on dark brown.'],
-                ['title' => 'Will my hair get damaged?', 'text' => 'We add bond protection to every lightener and never lift further than your hair can take.'],
-                ['title' => 'How do I keep blonde from turning yellow?', 'text' => 'Use a purple shampoo once a week and book a gloss every six to eight weeks.'],
-            ],
-        );
-
-        $this->post( $journal, [
-            'name' => 'Curl care',
-            'title' => 'How to Care for Curly Hair: The Routine Our Curl Specialists Use',
-            'path' => 'curl-care',
-        ], 'Five habits for happier curls',
-            "Curly hair is thirsty hair. The natural oils of the scalp travel slowly along a curl, so the ends dry out faster than in straight hair. Most frizz isn't a styling problem, it is a moisture problem.\n\nOur curl specialist Amara cuts every curl dry and individually, and she always gives her clients the same advice for home. These five habits make the biggest difference.",
-            'curls',
-            [
-                ['title' => '2×', 'text' => 'Washes per week at most'],
-                ['title' => '100 %', 'text' => 'Silicone- and sulphate-free care'],
-                ['title' => '6 wks', 'text' => 'Between curl cuts'],
-            ],
-            [
-                ['label' => 'Wash', 'title' => 'Gentle cleansing', 'text' => 'A mild shampoo on the scalp only, the lengths get clean when you rinse.'],
-                ['label' => 'Condition', 'title' => 'Squish to condish', 'text' => 'Scrunch conditioner in with water until the curls clump.'],
-                ['label' => 'Style', 'title' => 'Wet application', 'text' => 'Cream and gel on soaking wet hair, then hands off.'],
-                ['label' => 'Night', 'title' => 'Silk pillowcase', 'text' => 'A loose pineapple on silk keeps curls defined for day two.'],
-            ],
-            [
-                ['title' => 'What is a curl cut?', 'text' => 'A dry cut, curl by curl, that follows your natural pattern instead of fighting it.'],
-                ['title' => 'Should I brush my curls?', 'text' => 'Only in the shower with conditioner in. Dry brushing breaks up the curl pattern.'],
-                ['title' => 'Can I colour curly hair?', 'text' => 'Yes, with care. We use bond builders and gentle lighteners to keep the curl intact.'],
-            ],
-        );
-
-        $this->post( $journal, [
-            'name' => 'Bridal timeline',
-            'title' => 'Your Wedding Hair Timeline: Trial, Colour and Cut',
-            'path' => 'bridal-timeline',
-        ], 'Your wedding hair, month by month',
-            "The most common wish we hear from brides is to look like themselves, only a little more radiant. That starts long before the wedding morning: with healthy hair, the right colour at the right time and a trial that takes the nerves out of the big day.\n\nThis is the timeline we recommend to every bride, whether she wears her hair down, half-up or in a classic chignon.",
-            'bride-crown',
-            [
-                ['title' => '6 mo', 'text' => 'Before the wedding: first consultation'],
-                ['title' => '2 h', 'text' => 'For the bridal trial'],
-                ['title' => '1', 'text' => 'Stylist with you all morning'],
-            ],
-            [
-                ['label' => '6 months', 'title' => 'Plan', 'text' => 'Consultation, treatments for strength and shine, and growing out.'],
-                ['label' => '2 months', 'title' => 'Trial', 'text' => 'Bring your veil and photos of your dress.'],
-                ['label' => '2 weeks', 'title' => 'Colour', 'text' => 'The last colour and a gloss for extra shine.'],
-                ['label' => '1 week', 'title' => 'Cut', 'text' => 'Just the ends, so everything falls into place.'],
-            ],
-            [
-                ['title' => 'Should I wash my hair on the wedding day?', 'text' => 'Wash it the evening before. Second-day hair holds styles better.'],
-                ['title' => 'How long does bridal styling take?', 'text' => 'About 90 minutes for the bride and 45 minutes for each guest.'],
-                ['title' => 'Can you also do my make-up?', 'text' => 'We work with two make-up artists we trust and coordinate everything for you.'],
-            ],
-        );
 
         return $this;
     }
@@ -749,6 +660,95 @@ class ManeDemo extends AbstractDemo
 
 
     /**
+     * Creates the hair tips page and its posts below the home page.
+     *
+     * @param Page $home Home page
+     * @return static Same object for fluent calls
+     */
+    protected function addTips( Page $home ) : static
+    {
+        $tips = $this->tips( $home );
+
+        $this->post( $tips, [
+            'name' => 'Balayage guide',
+            'title' => 'Balayage, Foilyage or Highlights? How to Choose Your Colour',
+            'path' => 'balayage-guide',
+        ], 'Balayage, foilyage or highlights?',
+            "Three techniques, three very different results. Balayage is painted by hand and gives soft, sun-kissed brightness that grows out without a line. Foilyage combines painting with foils for more lift. Classic highlights are woven and placed from the root for an even, bright result.\n\nWhich one suits you depends on your starting colour, how bright you want to go and how often you want to come back. Here is how we decide together in the consultation.",
+            'balayage',
+            [
+                ['title' => '3–4 h', 'text' => 'Time for a full balayage'],
+                ['title' => '12 wks', 'text' => 'Until your first refresh'],
+                ['title' => '2', 'text' => 'Levels of lift in one session'],
+            ],
+            [
+                ['label' => 'Step 1', 'title' => 'Look at your base', 'text' => 'Natural or coloured, warm or cool, fine or thick.'],
+                ['label' => 'Step 2', 'title' => 'Decide on brightness', 'text' => 'Soft glow or bold blonde, near the face or all over.'],
+                ['label' => 'Step 3', 'title' => 'Choose the technique', 'text' => 'Balayage for softness, foils for lift, or both.'],
+                ['label' => 'Step 4', 'title' => 'Plan your upkeep', 'text' => 'A gloss in between keeps the tone fresh.'],
+            ],
+            [
+                ['title' => 'Does balayage work on dark hair?', 'text' => 'Yes, beautifully. Caramel and honey tones look especially natural on dark brown.'],
+                ['title' => 'Will my hair get damaged?', 'text' => 'We add bond protection to every lightener and never lift further than your hair can take.'],
+                ['title' => 'How do I keep blonde from turning yellow?', 'text' => 'Use a purple shampoo once a week and book a gloss every six to eight weeks.'],
+            ],
+        );
+
+        $this->post( $tips, [
+            'name' => 'Curl care',
+            'title' => 'How to Care for Curly Hair: The Routine Our Curl Specialists Use',
+            'path' => 'curl-care',
+        ], 'Five habits for happier curls',
+            "Curly hair is thirsty hair. The natural oils of the scalp travel slowly along a curl, so the ends dry out faster than in straight hair. Most frizz isn't a styling problem, it is a moisture problem.\n\nOur curl specialist Amara cuts every curl dry and individually, and she always gives her clients the same advice for home. These five habits make the biggest difference.",
+            'curls',
+            [
+                ['title' => '2×', 'text' => 'Washes per week at most'],
+                ['title' => '100 %', 'text' => 'Silicone- and sulphate-free care'],
+                ['title' => '6 wks', 'text' => 'Between curl cuts'],
+            ],
+            [
+                ['label' => 'Wash', 'title' => 'Gentle cleansing', 'text' => 'A mild shampoo on the scalp only, the lengths get clean when you rinse.'],
+                ['label' => 'Condition', 'title' => 'Squish to condish', 'text' => 'Scrunch conditioner in with water until the curls clump.'],
+                ['label' => 'Style', 'title' => 'Wet application', 'text' => 'Cream and gel on soaking wet hair, then hands off.'],
+                ['label' => 'Night', 'title' => 'Silk pillowcase', 'text' => 'A loose pineapple on silk keeps curls defined for day two.'],
+            ],
+            [
+                ['title' => 'What is a curl cut?', 'text' => 'A dry cut, curl by curl, that follows your natural pattern instead of fighting it.'],
+                ['title' => 'Should I brush my curls?', 'text' => 'Only in the shower with conditioner in. Dry brushing breaks up the curl pattern.'],
+                ['title' => 'Can I colour curly hair?', 'text' => 'Yes, with care. We use bond builders and gentle lighteners to keep the curl intact.'],
+            ],
+        );
+
+        $this->post( $tips, [
+            'name' => 'Bridal timeline',
+            'title' => 'Your Wedding Hair Timeline: Trial, Colour and Cut',
+            'path' => 'bridal-timeline',
+        ], 'Your wedding hair, month by month',
+            "The most common wish we hear from brides is to look like themselves, only a little more radiant. That starts long before the wedding morning: with healthy hair, the right colour at the right time and a trial that takes the nerves out of the big day.\n\nThis is the timeline we recommend to every bride, whether she wears her hair down, half-up or in a classic chignon.",
+            'bride-crown',
+            [
+                ['title' => '6 mo', 'text' => 'Before the wedding: first consultation'],
+                ['title' => '2 h', 'text' => 'For the bridal trial'],
+                ['title' => '1', 'text' => 'Stylist with you all morning'],
+            ],
+            [
+                ['label' => '6 months', 'title' => 'Plan', 'text' => 'Consultation, treatments for strength and shine, and growing out.'],
+                ['label' => '2 months', 'title' => 'Trial', 'text' => 'Bring your veil and photos of your dress.'],
+                ['label' => '2 weeks', 'title' => 'Colour', 'text' => 'The last colour and a gloss for extra shine.'],
+                ['label' => '1 week', 'title' => 'Cut', 'text' => 'Just the ends, so everything falls into place.'],
+            ],
+            [
+                ['title' => 'Should I wash my hair on the wedding day?', 'text' => 'Wash it the evening before. Second-day hair holds styles better.'],
+                ['title' => 'How long does bridal styling take?', 'text' => 'About 90 minutes for the bride and 45 minutes for each guest.'],
+                ['title' => 'Can you also do my make-up?', 'text' => 'We work with two make-up artists we trust and coordinate everything for you.'],
+            ],
+        );
+
+        return $this;
+    }
+
+
+    /**
      * Creates the visit page below the home page.
      *
      * @param Page $home Home page
@@ -819,7 +819,7 @@ class ManeDemo extends AbstractDemo
     {
         return $this->element ??= $this->saveElement( 'cards', 'Mane Atelier footer', ['columns' => '4', 'cards' => [
             ['title' => 'Salon', 'text' => "- [Services & prices](/services)\n- [Colour & balayage](/colour)\n- [Bridal hair](/bridal)\n- [Book now](/book)"],
-            ['title' => 'Clients', 'text' => "- [New clients](/new-clients)\n- [Gift cards](/gift-cards)\n- [Visit us](/visit)\n- [Hair journal](/journal)"],
+            ['title' => 'Clients', 'text' => "- [New clients](/new-clients)\n- [Gift cards](/gift-cards)\n- [Visit us](/visit)\n- [Hair tips](/hair-tips)"],
             ['title' => 'Mane Atelier', 'text' => "- [Our team](/team)\n- [Careers](/careers)\n- [Imprint](/imprint)\n- [Privacy](/privacy)"],
             ['title' => 'Newsletter', 'text' => "Care tips, new services and last-minute appointments, once a month.\n\n[Sign up by email](mailto:hello@maneatelier.example?subject=Newsletter)"],
         ]] );
@@ -943,9 +943,9 @@ class ManeDemo extends AbstractDemo
                 'text' => "## Bridal hair, *calm and timeless*\n\nFrom the first consultation to the last pin on your wedding morning, at the salon or at your venue. We style the whole bridal party, too.\n\n[Discover bridal hair](/bridal)",
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
-                'title' => 'From the hair journal',
+                'title' => 'Hair tips from our stylists',
                 'layout' => 'cards',
-                'parent-page' => ['value' => $this->journalId, 'label' => 'Journal'],
+                'parent-page' => ['value' => $this->tipsId, 'label' => 'Hair tips'],
                 'order' => '_lft',
                 'limit' => 3,
             ]],
@@ -1002,39 +1002,6 @@ class ManeDemo extends AbstractDemo
         );
 
         return ['id' => $this->icons[$name], 'type' => 'file'];
-    }
-
-
-    /**
-     * Creates the hair journal overview page and returns it.
-     *
-     * @param Page $home Home page
-     * @return Page Journal page
-     */
-    protected function journal( Page $home ) : Page
-    {
-        return $this->page( [
-            'id' => $this->journalId,
-            'lang' => 'en',
-            'name' => 'Journal',
-            'title' => 'Hair Journal: Care Guides, Colour and Bridal Advice | Mane Atelier',
-            'path' => 'journal',
-            'type' => 'page',
-            'status' => 1,
-        ], [
-            ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-                'title' => 'Notes from *the chair*',
-                'subtitle' => 'Hair journal',
-                'text' => 'Care routines, colour advice and bridal tips from our stylists, written for the time between your appointments.',
-                'background' => ['id' => $this->wide( 'flatlay' ), 'type' => 'file'],
-            ]],
-            ['id' => 'journal-list', 'type' => 'blog', 'group' => 'main', 'data' => [
-                'layout' => 'cards',
-                'parent-page' => ['value' => $this->journalId, 'label' => 'Journal'],
-                'order' => '_lft',
-                'limit' => 12,
-            ]],
-        ], $home );
     }
 
 
@@ -1121,14 +1088,14 @@ SVG;
      */
     protected function pages() : void
     {
-        $this->journalId = (string) Str::uuid7();
+        $this->tipsId = (string) Str::uuid7();
         $home = $this->home();
 
         $this->addServices( $home )
             ->addTeam( $home )
             ->addNewClients( $home )
             ->addGifts( $home )
-            ->addJournal( $home )
+            ->addTips( $home )
             ->addVisit( $home )
             ->addBook( $home )
             ->addImprint( $home )
@@ -1137,9 +1104,9 @@ SVG;
 
 
     /**
-     * Creates a post below the hair journal page.
+     * Creates a post below the hair tips page.
      *
-     * @param Page $parent Journal page
+     * @param Page $parent Hair tips page
      * @param array<string, string> $data Page name, title and path
      * @param string $title Article headline
      * @param string $text Article text
@@ -1267,6 +1234,39 @@ SVG;
                 'file' => ['id' => $this->cropped( $person[1], 800, 1000 ), 'type' => 'file'],
             ], $people ),
         ]];
+    }
+
+
+    /**
+     * Creates the hair tips overview page and returns it.
+     *
+     * @param Page $home Home page
+     * @return Page Hair tips page
+     */
+    protected function tips( Page $home ) : Page
+    {
+        return $this->page( [
+            'id' => $this->tipsId,
+            'lang' => 'en',
+            'name' => 'Hair tips',
+            'title' => 'Hair Tips: Care Guides, Colour and Bridal Advice | Mane Atelier',
+            'path' => 'hair-tips',
+            'type' => 'page',
+            'status' => 1,
+        ], [
+            ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
+                'title' => 'Notes from *the chair*',
+                'subtitle' => 'Hair tips',
+                'text' => 'Care routines, colour advice and bridal tips from our stylists, written for the time between your appointments.',
+                'background' => ['id' => $this->wide( 'flatlay' ), 'type' => 'file'],
+            ]],
+            ['id' => 'tips-list', 'type' => 'blog', 'group' => 'main', 'data' => [
+                'layout' => 'cards',
+                'parent-page' => ['value' => $this->tipsId, 'label' => 'Hair tips'],
+                'order' => '_lft',
+                'limit' => 12,
+            ]],
+        ], $home );
     }
 
 

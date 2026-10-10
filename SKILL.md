@@ -29,7 +29,7 @@ Use a calm, light and airy layout that feels like the salon itself: lots of whit
 - Price list: a table with prices by stylist level and `pricing` elements as price lists, one item per category, features as list items ending with a bold price and tags such as `bestseller` or `20 min` as inline code, followed by a text element with the consultation, patch test and long hair notes.
 - Team: cards in four columns with arched 4:5 portraits, the name as title and a bold first line with the role and speciality.
 - Bridal, gift cards and careers: `pricing` or `cards` elements with three items, one highlighted with a badge, and a horizontal timeline for the steps.
-- Hair journal: `blog` pages below the journal page (status 2, hidden in navigation), each with an article, key figures, a vertical step timeline, questions and a call to action.
+- Hair tips: `blog` pages below the hair tips page (status 2, hidden in navigation), each with an article, key figures, a vertical step timeline, questions and a call to action.
 - Visit: a hero with the salon, a table with opening hours and last appointments, cards for the salon areas, a map with directions and questions about parking, public transport, accessibility and pets.
 - Footer: salon, client and company links and a newsletter card; the layout adds the address, opening hours and notice from the salon config below it.
 - Salon details: the `salon` config adds the salon JSON-LD, the announcement top bar, the "Book now" button in the header, the footer address, hours and notice and the action bar for phones.

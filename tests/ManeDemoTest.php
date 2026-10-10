@@ -45,11 +45,11 @@ class ManeDemoTest extends ThemeTestAbstract
 
     public function testDemo() : void
     {
-        $journal = Page::where( 'path', 'journal' )->firstOrFail();
+        $tips = Page::where( 'path', 'hair-tips' )->firstOrFail();
         $items = Page::where( 'type', 'blog' )->get();
 
         $this->assertCount( 3, $items );
-        $this->assertTrue( $items->every( fn( $item ) => $item->parent_id === $journal->id ) );
+        $this->assertTrue( $items->every( fn( $item ) => $item->parent_id === $tips->id ) );
         $this->assertSame( 'mane', Page::where( 'tag', 'root' )->firstOrFail()->theme );
     }
 
@@ -78,20 +78,20 @@ class ManeDemoTest extends ThemeTestAbstract
     }
 
 
-    public function testJournal() : void
+    public function testTips() : void
     {
-        $response = $this->get( '/journal' );
+        $response = $this->get( '/hair-tips' );
 
         $response->assertOk();
         $response->assertSee( 'class="list-item"', false );
         $response->assertSee( 'How to Care for Curly Hair' );
-        $response->assertSee( '<a href="http://localhost/journal" class="active">', false );
+        $response->assertSee( '<a href="http://localhost/hair-tips" class="active">', false );
     }
 
 
     public function testPages() : void
     {
-        foreach( ['/services', '/colour', '/bridal', '/team', '/careers', '/new-clients', '/gift-cards', '/journal', '/visit', '/book', '/imprint', '/privacy'] as $path ) {
+        foreach( ['/services', '/colour', '/bridal', '/team', '/careers', '/new-clients', '/gift-cards', '/hair-tips', '/visit', '/book', '/imprint', '/privacy'] as $path ) {
             $this->get( $path )->assertOk();
         }
 

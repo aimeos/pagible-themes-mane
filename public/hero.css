@@ -10,19 +10,34 @@
 
 .hero .background {
     display: block;
-    order: 1;
-    width: 100%;
-    margin: 2.5rem 0 0;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     overflow: hidden;
-    border-radius: var(--pico-border-radius);
+}
+
+.hero:has(.background)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: #F7F2ECB3;
 }
 
 .hero .background img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     border-radius: 0;
     object-fit: cover;
+}
+
+.hero:has(.background) :is(h1, p, .cms-text, .subtitle) {
+    color: #1F1A17;
+}
+
+.hero:has(.background) h1 em {
+    color: #6B3B2A;
 }
 
 @keyframes hero-zoom {
@@ -208,25 +223,8 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .hero .background {
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        margin: 0;
-        border-radius: 0;
-    }
-
     .hero:has(.background)::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
         background: linear-gradient(90deg, #F7F2ECE6 0%, #F7F2ECB3 45%, #F7F2EC00 65%);
-    }
-
-    .hero .background img {
-        height: 100%;
-        aspect-ratio: auto;
     }
 
     .hero:has(.background) .container {
@@ -235,14 +233,6 @@
 
     .hero:has(.background) .first {
         max-width: min(31vw, 28rem);
-    }
-
-    .hero:has(.background) :is(h1, p, .cms-text, .subtitle) {
-        color: #1F1A17;
-    }
-
-    .hero:has(.background) h1 em {
-        color: #6B3B2A;
     }
 }
 
