@@ -22,7 +22,7 @@ Use a calm, light and airy layout that feels like the salon itself: lots of whit
 
 ## Components
 
-- Hero: a split layout with one 4:5 portrait image in `files`, shown in an arched frame with a clay outline and a blush offset arch, an eyebrow naming the salon and district, a short headline with an italic accent and two actions ("Book now" and "Services & prices"). Nest secondary pages (colour, bridal, careers) below a top-level page so the header keeps about six links next to "Book now".
+- Hero: a full width `background` image in 16:9 with the subject on the right, calm or darker tones and no faces behind the text (the espresso overlay keeps the text at WCAG AA contrast, uniform on phones and tablets, fading to the right from 992px; the home page adds the `zoom` animation), an eyebrow naming the salon and district, a short headline with an italic accent and two actions ("Book now" and "Services & prices"). Nest secondary pages (colour, bridal, careers) below a top-level page so the header keeps about six links next to "Book now".
 - Figures and badges: cards in the `figures` layout for opening year, rating, team size and vegan colour, and in the `badges` layout with clay line icons for consultation, vegan colour, clear prices, head spa and the satisfaction promise.
 - Signature services: a `pricing` element with three services, each with a photo, the starting price and what is included, the middle one highlighted with a badge.
 - Before and after: a `before-after` element with the same client before and after a colour service; never use photos of different people.

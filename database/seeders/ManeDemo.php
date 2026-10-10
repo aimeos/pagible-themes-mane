@@ -67,6 +67,7 @@ class ManeDemo extends AbstractDemo
         'round-brush' => ['photo-1734111719430-fe4a3973f8af', 'Round brush finish', 'Round brush blow-dry on blonde hair'],
         'salon' => ['photo-1695527081848-1e46c06e6458', 'The salon', 'Bright hair salon with a stylist at work'],
         'salon-bright' => ['photo-1633681138600-295fcd688876', 'Styling stations', 'Bright salon with white mirrors and styling chairs'],
+        'salon-lamps' => ['photo-1536520002442-39764a41e987', 'Styling bar', 'Long styling bar with mirrors and warm pendant lights'],
         'salon-mirrors' => ['photo-1633681926022-84c23e8cb2d6', 'Round mirrors', 'Salon with round mirrors and a brick wall'],
         'shampoo' => ['photo-1610705267928-1b9f2fa7f1c5', 'Shampoo bar', 'Pink shampoo bottles lined up on a shelf'],
         'stylist-1' => ['photo-1648157963892-fa90a04e278b', 'Lena Hofmann', 'Portrait of a woman with blonde hair'],
@@ -108,7 +109,7 @@ class ManeDemo extends AbstractDemo
                 'title' => 'Your chair is *waiting*',
                 'subtitle' => 'Book an appointment',
                 'text' => 'Tell us what you have in mind and when you would like to come. We confirm your appointment within two hours during opening times.',
-                'files' => [['id' => $this->portrait( 'salon' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'basin' ), 'type' => 'file'],
             ]],
             ['id' => 'booking-form', 'type' => 'contact', 'group' => 'main', 'data' => [
                 'title' => 'Your appointment',
@@ -161,7 +162,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book a bridal trial', 'url' => '/book'],
                     ['label' => 'See bridal prices', 'url' => '#bridal-prices'],
                 ],
-                'files' => [['id' => $this->portrait( 'bridal' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'bridal' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Bridal looks we love',
@@ -251,7 +252,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Send your application', 'url' => 'mailto:jobs@maneatelier.example'],
                 ],
-                'files' => [['id' => $this->portrait( 'team' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'curling' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'tools' ), 'type' => 'file'],
@@ -306,7 +307,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book a colour consultation', 'url' => '/book'],
                     ['label' => 'See colour prices', 'url' => '/services'],
                 ],
-                'files' => [['id' => $this->portrait( 'foils' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'foils' ), 'type' => 'file'],
             ]],
             $this->transformation( 'From flat to *dimensional*' ),
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
@@ -547,7 +548,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book a free consultation', 'url' => '/book'],
                 ],
-                'files' => [['id' => $this->portrait( 'reception' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'reception' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'timeline', 'group' => 'main', 'data' => [
                 'title' => 'Your first visit',
@@ -631,7 +632,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book now', 'url' => '/book'],
                     ['label' => 'New clients', 'url' => '/new-clients'],
                 ],
-                'files' => [['id' => $this->portrait( 'cut' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'cut' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Prices by stylist level',
@@ -712,7 +713,7 @@ class ManeDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book with your stylist', 'url' => '/book'],
                 ],
-                'files' => [['id' => $this->portrait( 'team' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'team' ), 'type' => 'file'],
             ]],
             $this->team(),
             ['id' => Utils::uid(), 'type' => 'timeline', 'group' => 'main', 'data' => [
@@ -758,14 +759,14 @@ class ManeDemo extends AbstractDemo
             'status' => 1,
         ], [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-                'title' => 'Light, calm and *close to the park*',
+                'title' => 'Warm, calm and *close to the park*',
                 'subtitle' => 'Visit us',
                 'text' => 'Our salon is in a corner building in Schwabing, two minutes from the Englischer Garten. Eight chairs, big windows and a quiet wash lounge in the back.',
                 'buttons' => [
                     ['label' => 'Get directions', 'url' => 'https://www.openstreetmap.org/?mlat=48.1616&mlon=11.5795#map=17/48.1616/11.5795'],
                     ['label' => 'Call us', 'url' => 'tel:+498923456780'],
                 ],
-                'files' => [['id' => $this->portrait( 'salon-bright' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'salon-lamps' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Opening hours',
@@ -800,18 +801,6 @@ class ManeDemo extends AbstractDemo
         ], $home );
 
         return $this;
-    }
-
-
-    /**
-     * Creates (once) a 4:5 portrait hero image and returns its file ID.
-     *
-     * @param string $key PHOTOS key
-     * @return string File ID
-     */
-    protected function portrait( string $key ) : string
-    {
-        return $this->cropped( $key, 960, 1200, true, [480, 960] );
     }
 
 
@@ -914,7 +903,8 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book now', 'url' => '/book'],
                     ['label' => 'Services & prices', 'url' => '/services'],
                 ],
-                'files' => [['id' => $this->portrait( 'waves' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'waves' ), 'type' => 'file'],
+                'background-animation' => 'zoom',
                 'main' => true,
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
@@ -1030,7 +1020,7 @@ class ManeDemo extends AbstractDemo
                 'title' => 'Notes from *the chair*',
                 'subtitle' => 'Hair journal',
                 'text' => 'Care routines, colour advice and bridal tips from our stylists, written for the time between your appointments.',
-                'files' => [['id' => $this->portrait( 'round-brush' ), 'type' => 'file']],
+                'background' => ['id' => $this->wide( 'wash' ), 'type' => 'file'],
             ]],
             ['id' => 'journal-list', 'type' => 'blog', 'group' => 'main', 'data' => [
                 'layout' => 'cards',
@@ -1285,5 +1275,17 @@ SVG;
             'before' => ['id' => $this->cropped( 'balayage-before', 1200, 800 ), 'type' => 'file'],
             'after' => ['id' => $this->cropped( 'balayage', 1200, 800 ), 'type' => 'file'],
         ]];
+    }
+
+
+    /**
+     * Creates (once) a 16:9 full width hero image and returns its file ID.
+     *
+     * @param string $key PHOTOS key
+     * @return string File ID
+     */
+    protected function wide( string $key ) : string
+    {
+        return $this->cropped( $key, 1920, 1080, true, [960, 1920] );
     }
 }

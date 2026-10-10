@@ -51,7 +51,7 @@
     z-index: -1;
     background:
         linear-gradient(0deg, #1F1A1799 0%, #1F1A1700 40%),
-        linear-gradient(90deg, #1F1A17D9 0%, #1F1A1799 50%, #1F1A1726 100%);
+        linear-gradient(#1F1A17BF, #1F1A17BF);
 }
 
 .hero:has(.background) h1 {
@@ -245,6 +245,12 @@
 }
 
 @media screen and (min-width: 992px) {
+    .hero:has(.background)::after {
+        background:
+            linear-gradient(0deg, #1F1A1799 0%, #1F1A1700 40%),
+            linear-gradient(90deg, #1F1A17E6 0%, #1F1A17BF 50%, #1F1A1740 100%);
+    }
+
     .hero .container:has(> .first + .second:not(.multiple)) {
         display: grid;
         grid-template-columns: 7fr 5fr;
