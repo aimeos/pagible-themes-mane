@@ -195,12 +195,6 @@
 }
 
 @media screen and (min-width: 992px) {
-    .hero:has(.background)::after {
-        background:
-            linear-gradient(0deg, #1F1A1799 0%, #1F1A1700 40%),
-            linear-gradient(90deg, #1F1A17E6 0%, #1F1A17BF 50%, #1F1A1740 100%);
-    }
-
     .hero .container:has(> .first + .second:not(.multiple)) {
         display: grid;
         grid-template-columns: 7fr 5fr;
@@ -220,6 +214,14 @@
         z-index: -1;
         margin: 0;
         border-radius: 0;
+    }
+
+    .hero:has(.background)::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(90deg, #F7F2ECE6 0%, #F7F2ECB3 45%, #F7F2EC00 65%);
     }
 
     .hero .background img {
