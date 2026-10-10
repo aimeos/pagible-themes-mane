@@ -54,7 +54,7 @@ class ManeDemo extends AbstractDemo
         'braiding' => ['photo-1634449571017-5fecfd26ad76', 'Braiding', 'Stylist braiding long hair in the salon'],
         'bridal' => ['photo-1549236177-77e8271c34b6', 'Bridal half-up', 'Bride with a soft half-up style and a hair accessory'],
         'bride-crown' => ['photo-1523264114838-feca761983c4', 'Bride with flowers', 'Bride with loose waves and a floral crown'],
-        'bride-white' => ['photo-1586342805832-c0f10f33ac3d', 'Bridal headband', 'Bride in a white blouse with a white flower headband'],
+        'bride-pinning' => ['photo-1581674210501-c760093514e8', 'Bridal styling', 'Stylist pinning a pearl hair vine into a bride\'s half-up waves'],
         'brunette' => ['photo-1522337360788-8b13dee7a37e', 'Brunette waves', 'Woman with long brunette waves seen from behind'],
         'curls' => ['photo-1569430548104-6ca1cda3ec41', 'Defined curls', 'Woman with long, defined dark curls'],
         'curly-smile' => ['photo-1595218841793-d38b949402d2', 'Curl cut', 'Smiling woman with voluminous curly hair'],
@@ -63,19 +63,19 @@ class ManeDemo extends AbstractDemo
         'flatlay' => ['photo-1691600864306-11096725fadd', 'Scissors and flowers', 'Scissors, twine and white flowers on a white table'],
         'foils' => ['photo-1707812343087-c9ff9e5abb43', 'Foil highlights', 'Colourist placing foils for highlights'],
         'foils-2' => ['photo-1707720531504-ce087725861a', 'Colour work', 'Hair sectioned in foils during a colour appointment'],
-        'lounge' => ['photo-1594568790995-b7287d654ba6', 'Calm corner', 'Bright room with a round mirror and a wicker chair'],
         'ombre' => ['photo-1605980766335-d3a41c7332a1', 'Lived-in colour', 'Long hair with a soft lived-in ombre'],
         'platinum' => ['photo-1779154137745-5680e6b97d65', 'Platinum bob', 'Woman with a platinum bob in profile against a white wall'],
+        'platinum-flipped' => ['photo-1779154137745-5680e6b97d65', 'Platinum bob', 'Woman with a platinum bob in profile against a white wall', 'faces&flip=h'],
         'products' => ['photo-1695527081782-33e110235ade', 'Care products', 'Shelf with hair care products in the salon'],
         'round-brush' => ['photo-1734111719430-fe4a3973f8af', 'Round brush finish', 'Round brush blow-dry on blonde hair'],
         'salon' => ['photo-1695527081848-1e46c06e6458', 'The salon', 'Bright hair salon with a stylist at work'],
+        'salon-window' => ['photo-1695527081874-b674c46f40fb', 'Light-filled salon', 'Stylist blow-drying a client in a bright salon with big windows and plants'],
         'salon-bright' => ['photo-1633681138600-295fcd688876', 'Styling stations', 'Bright salon with white mirrors and styling chairs'],
         'salon-mirrors' => ['photo-1633681926022-84c23e8cb2d6', 'Round mirrors', 'Salon with round mirrors and a brick wall'],
         'scissors' => ['photo-1640958899960-65fc2f989a5f', 'Ready for you', 'Hair scissors on a white table'],
         'shampoo' => ['photo-1610705267928-1b9f2fa7f1c5', 'Shampoo bar', 'Pink shampoo bottles lined up on a shelf'],
         'shears' => ['photo-1692521248572-b3108ab80955', 'Shears and eucalyptus', 'Hair shears beside a bowl of eucalyptus on a white table'],
         'silver' => ['photo-1664897604719-f97662af3de2', 'Silver blonde', 'Close-up of silver blonde hair framing a face'],
-        'studio' => ['photo-1748015879337-ef95556c3749', 'Long auburn hair', 'Smiling woman with long auburn hair in a bright studio'],
         'stylist-1' => ['photo-1648157963892-fa90a04e278b', 'Lena Hofmann', 'Portrait of a woman with blonde hair'],
         'stylist-2' => ['photo-1619718908820-5c1de14e0b7e', 'Amara Okafor', 'Portrait of a smiling woman with curly hair'],
         'stylist-3' => ['photo-1774727485537-e5455eec8baa', 'Sofia Marino', 'Portrait of a woman with short dark hair'],
@@ -168,7 +168,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book a bridal trial', 'url' => '/book'],
                     ['label' => 'See bridal prices', 'url' => '#bridal-prices'],
                 ],
-                'background' => ['id' => $this->wide( 'bride-white' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'bride-pinning' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'Bridal looks we love',
@@ -772,7 +772,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Get directions', 'url' => 'https://www.openstreetmap.org/?mlat=48.1616&mlon=11.5795#map=17/48.1616/11.5795'],
                     ['label' => 'Call us', 'url' => 'tel:+498923456780'],
                 ],
-                'background' => ['id' => $this->wide( 'lounge' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'salon-window' ), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Opening hours',
@@ -909,7 +909,7 @@ class ManeDemo extends AbstractDemo
                     ['label' => 'Book now', 'url' => '/book'],
                     ['label' => 'Services & prices', 'url' => '/services'],
                 ],
-                'background' => ['id' => $this->wide( 'studio' ), 'type' => 'file'],
+                'background' => ['id' => $this->wide( 'platinum-flipped' ), 'type' => 'file'],
                 'background-animation' => 'zoom',
                 'main' => true,
             ]],
@@ -1048,14 +1048,16 @@ class ManeDemo extends AbstractDemo
         if( !isset( $this->logoFile ) )
         {
             $svg = <<<'SVG'
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" role="img" aria-labelledby="title desc">
   <title id="title">Mane Atelier logo</title>
-  <desc id="desc">Clay rose arch with a flowing strand of hair beside the Mane Atelier wordmark</desc>
-  <path d="M10 74V36a28 28 0 0 1 56 0v38" fill="none" stroke="#9A5A43" stroke-width="2"/>
-  <path d="M26 66c10-8 2-20 12-30s14-4 12-14" fill="none" stroke="#9A5A43" stroke-width="2" stroke-linecap="round"/>
-  <path d="M32 70c10-8 4-18 14-26" fill="none" stroke="#E9D5CB" stroke-width="2" stroke-linecap="round"/>
-  <text x="84" y="48" fill="#1F1A17" font-family="'Cormorant Garamond', 'Hoefler Text', Baskerville, 'Iowan Old Style', Georgia, serif" font-size="34" letter-spacing="9">MANE</text>
-  <text x="86" y="68" fill="#9A5A43" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" letter-spacing="5">ATELIER · MÜNCHEN</text>
+  <desc id="desc">Monogram M drawn as a flowing lock of hair ending in a curl beside the Mane Atelier wordmark</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 60C4 32 8 6 17 6S28 30 30 37C32 30 34 6 43 6S56 32 56 50c0 6-5 9-9 6.5s-1.5-8 3-7" stroke="#9A5A43" stroke-width="2.6"/>
+    <path d="M10.5 60C10.5 38 13 17 18 15" stroke="#D9B8A8" stroke-width="1.4"/>
+    <path d="M49.5 42C49.5 31 46 17 42 15" stroke="#D9B8A8" stroke-width="1.4"/>
+  </g>
+  <text x="74" y="36" fill="#1F1A17" font-family="'Cormorant Garamond', 'Hoefler Text', Baskerville, 'Iowan Old Style', Georgia, serif" font-size="36" letter-spacing="8">MANE</text>
+  <text x="76" y="56" fill="#9A5A43" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11.5" letter-spacing="4.2">ATELIER · MÜNCHEN</text>
 </svg>
 SVG;
 
@@ -1063,7 +1065,7 @@ SVG;
                 $svg,
                 'mane-atelier-logo.svg',
                 'Mane Atelier logo',
-                'Clay rose arch with a flowing strand of hair beside the Mane Atelier wordmark',
+                'Monogram M drawn as a flowing lock of hair ending in a curl beside the Mane Atelier wordmark',
                 true,
             );
         }
